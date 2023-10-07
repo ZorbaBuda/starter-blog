@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "a_garamond_pro";
+    src: url("/assets/fonts/AGaramondPro-Regular.otf") format("off");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+   @font-face {
+    font-family: "orpheus_pro";
+    src: url("/assets/fonts/orpheuspro.otf") format("otf");
+    font-style: oblique;
+    font-display: swap;
+  } 
+
+  @font-face {
+    font-family: "orpheus_pro_regular";
+    src: url("/assets/fonts/OrpheusRegular.otf") format("otf");
+    font-style: normal;
+    font-display: swap;
+  } 
