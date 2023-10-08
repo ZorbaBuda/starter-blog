@@ -10,6 +10,12 @@ type Meta = {
     content: ReactElement<any, string | JSXElementConstructor<any>>,
   }
 
+  type Toc = {
+    value: string;
+    depth: number;
+    url: string;
+}[];
+
   //  type Post = {
   //   /** ID */
   //   _id: string

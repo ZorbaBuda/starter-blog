@@ -28,6 +28,8 @@ export type Post = {
   body: MDX
   url: string
   slug: string
+  filePath: string
+  toc: string
 }  
 
 /** Nested types */

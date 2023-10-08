@@ -1,6 +1,10 @@
 import { defineDocumentType } from 'contentlayer/source-files'
 import { makeSource } from 'contentlayer/source-remote-files';
 import { spawn } from 'node:child_process';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import  {extractTocHeadings } from './lib/remark-tok-headings'
+
 
 const BLOG_DIRECTORY = 'blogs';
 const SYNC_INTERVAL = 1000 * 60;
@@ -31,6 +35,11 @@ export const Post = defineDocumentType(() => ({
           type: 'string',
           resolve: (doc) => doc._raw.sourceFileName.split('.')[0],
         },
+        filePath: {
+          type: 'string',
+          resolve: (doc) => doc._raw.sourceFilePath,
+        },
+         toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
       },
 
 }))
@@ -48,7 +57,9 @@ const syncContentFromGit = async ({ contentDir, gitTag }) => {
     
       if [ -d  "${contentDir}" ];
         then
-          cd "${contentDir}"; git pull;
+          cd "${contentDir}"; 
+          git pull;
+          
         else
           git clone --depth 1 --single-branch ${gitUrl} ${contentDir};
       fi
@@ -198,6 +209,12 @@ export default makeSource((sourceKey = 'main') => (
         // contentDirInclude: [BLOG_DIRECTORY],
         documentTypes: [Post],
         disableImportAliasWarning: true,
+        mdx: {
+          rehypePlugins: [
+            rehypeSlug,
+            rehypeAutolinkHeadings
+          ]
+        }
        
     }
 ))
