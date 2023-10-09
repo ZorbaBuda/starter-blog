@@ -29,7 +29,6 @@ export type Post = {
   url: string
   slug: string
   filePath: string
-  toc: string
 }  
 
 /** Nested types */

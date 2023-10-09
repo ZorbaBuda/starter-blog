@@ -1,0 +1,13 @@
+Added use client directive to the following files:
+chunk-L4XGCDMS.js
+chunk-LGRWOOGP.js
+chunk-R2UQHQLC.js
+chunk-R66XZDOX.js
+chunk-VOQEO4FV.js
+chunk-WO2FOAH6.js
+chunk-ZAWHWS54.js
+ui/NewsletterForm.js
+ui/BlogNewsletterForm.js
+ui/Pre.js
+search/KBarButton.js
+search/AlgoliaButton.js

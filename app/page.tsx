@@ -25,6 +25,7 @@ const MAX_DISPLAY = 5
             {siteMetadata.description}
           </p>
         </div>
+        {/* Check this way of doing (ekomenyong) <BlogSection posts={posts} /> */}
         <Posts />
       </div>
       {/* {posts.length > MAX_DISPLAY && ( */}

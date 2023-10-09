@@ -8,6 +8,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/flowbite-react/**/*.js"
   ],
   darkMode: 'class',
   theme: {
@@ -70,6 +71,7 @@ const config: Config = {
   plugins: [require('@tailwindcss/forms'), 
             require('@tailwindcss/typography'),
             require('@tailwindcss/aspect-ratio'),
+            require('flowbite/plugin')
 ],
    
 }

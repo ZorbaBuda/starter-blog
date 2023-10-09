@@ -25,6 +25,7 @@ export const Post = defineDocumentType(() => ({
         layout: { type: 'string' },
         bibliography: { type: 'string' },
         canonicalUrl: { type: 'string' },
+    
       },
     computedFields: {
         url: {
@@ -39,7 +40,7 @@ export const Post = defineDocumentType(() => ({
           type: 'string',
           resolve: (doc) => doc._raw.sourceFilePath,
         },
-         toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
+        // toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
       },
 
 }))
@@ -212,7 +213,15 @@ export default makeSource((sourceKey = 'main') => (
         mdx: {
           rehypePlugins: [
             rehypeSlug,
-            rehypeAutolinkHeadings
+            [
+              rehypeAutolinkHeadings,
+              {
+                properties: {
+                  className: ["subheading-anchor"],
+                  ariaLabel: "Link to section",
+                },
+              },
+            ],
           ]
         }
        
