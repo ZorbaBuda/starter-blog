@@ -3,7 +3,7 @@ export { default as Pre } from "./pre";
 export { MDXComponents } from "./mdx";
 export { default as Callout } from "./callout";
 export { default as CodeTitle } from "./code-title";
-export { default as KommyImage } from "./image";
+export { default as KommyImage } from "./imageNew";
 // export { default as AboutSection } from "./about-section";
 // export { default as BlogHeader } from "./blog-header";
 // export { default as BlogSection } from "./blog-section";

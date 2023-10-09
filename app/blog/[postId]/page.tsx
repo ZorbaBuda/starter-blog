@@ -3,6 +3,7 @@ import Component from '@/components/mdx-component';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import TableOfContents from '@/components/TableOfContents';
+import { MDXComponents } from '@/components';
 
 type BlogParam = {
   postId: string;
@@ -71,7 +72,9 @@ const BlogDetails: React.FC<BlogDetailsProps> = async ({ params }) => {
 
         <article className="max-w-full px-4 pb-8 text-dark lg:max-w-3xl">
 
-        <Component code={post.body.code} />
+        <MDXComponents code={post.body.code} />
+
+        {/* <Component code={post.body.code} /> */}
 
         </article>
         </div>

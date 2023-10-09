@@ -4,10 +4,7 @@ import { clsxm } from "@/utils";
 import React from "react";
 
 const components = {
-  Callout,
-  CodeTitle,
-  KommyImage,
-  KommyLink,
+ 
   a: ({ ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
       className="animated-underline border-b border-dotted border-dark hover:border-dark/0"
